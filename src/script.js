@@ -1,5 +1,5 @@
 import {log} from './logger' ;
-// import './style.css'
+import "./style.sass";
 
 
 log('hello home');
