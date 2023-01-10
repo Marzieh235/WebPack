@@ -5,14 +5,15 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
     entry: {
-        bundle: './src/script.js'
+        bundle: './src/script.js',
+        admin: './src/admin.js'
     },
     output: {
         filename: '[name].[contenthash].js',
         path: path.resolve(__dirname, 'build'),
         clean: true,
     },
-    mode :"production",
+    mode: "production",
     module: {
         rules: [
             {
@@ -67,8 +68,16 @@ module.exports = {
 
     plugins: [
         new HtmlWebpackPlugin({
-            title: 'hello everyOne',
-            template: 'index.html'
+            title: 'good morning',
+            template: 'index.html',
+            filename: 'index.html',
+            chunks: 'bundle',
+        }),
+        new HtmlWebpackPlugin({
+            title: 'good night',
+            template: 'index.html',
+            filename: 'admin.html',
+            chunks: 'admin',
         }),
 
         new MiniCssExtractPlugin({

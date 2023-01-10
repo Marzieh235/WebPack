@@ -1,0 +1,20 @@
+@font-face {
+  font-family: Parastoo;
+  src: url(0916d089e75f0fa27ce4.eot);
+  src: url(0916d089e75f0fa27ce4.eot?#iefix) format('embedded-opentype'),
+       url(1a31b21130e845589c97.woff2) format('woff2'),
+       url(8f5f8326a0b034a5fbec.woff) format('woff'),
+       url(b3f7c544b11c340d8238.ttf) format('truetype');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: Parastoo;
+  src: url(554a2093d676df63f6ca.eot);
+  src: url(554a2093d676df63f6ca.eot?#iefix) format('embedded-opentype'),
+       url(f297ff7e0adc43a45b71.woff2) format('woff2'),
+       url(93d76e955624f6c98719.woff) format('woff'),
+       url(9f71d8f8846d6b0e6524.ttf) format('truetype');
+  font-weight: bold;
+}
+body{font-family:"Parastoo"}.image-box{display:flex;justify-content:center;align-items:center;border:2px solid rgba(20,148,217,.5);padding:10px;flex-direction:column}
