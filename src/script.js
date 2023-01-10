@@ -1,5 +1,8 @@
-import {log} from './logger' ;
-import "./style.sass";
+import ImageComponent from './components/ImageComponent'
 
 
-log('hello home');
+
+const app =document.querySelector('#app');
+
+
+app.appendChild(ImageComponent.render());

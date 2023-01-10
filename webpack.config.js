@@ -1,35 +1,36 @@
-
-
-
+const path = require('path')
 
 module.exports = {
-    entry: {
-        bundle: './src/script.js',
+    entry : {
+        bundle : './src/script.js'
     },
-    output: {
-        filename: '[name].js',
-        path: __dirname + '/build'
+    output : {
+        filename : '[name].js',
+        path : path.resolve(__dirname,'build'),
     },
-
-    
-    module: {
-        rules: [
-          {
-            test: /\.s[ac]ss$/i,
-            use: [
-              // Creates `style` nodes from JS strings
-              "style-loader",
-              // Translates CSS into CommonJS
-              "css-loader",
-              // Compiles Sass to CSS
-              "sass-loader",
-            ],
-          },
-        ],
-      },
-
-
-
+    module : {
+        rules : [
+            {
+                test : /\.css$/,
+                use : ['style-loader' , 'css-loader']
+            },
+            {
+                test : /\.s[ac]ss$/,
+                use : ['style-loader' , 'css-loader' , 'sass-loader']
+            },
+            {
+                test : /\.(png|jpe?g|gif)/,
+                use : [
+                   {
+                       loader : 'file-loader',
+                       options : {
+                           publicPath : 'build/images',
+                           outputPath : 'images',
+                           name : '[name].[ext]'
+                       }
+                   } 
+                ]
+            }
+        ]
+    }
 }
-
-
