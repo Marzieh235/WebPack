@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('Html-Webpack-Plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const Notifier = require('./webpack-plugins/Notifier')
+const webpack = require('webpack');
 
 const config = {
     entry: {
@@ -19,6 +20,10 @@ const config = {
           // include all types of chunks
           chunks: 'all',
         }
+      },
+
+      stats: {
+        all: undefined,
       },
 
 
@@ -75,6 +80,7 @@ const config = {
     },
 
     plugins: [
+        new webpack.ProgressPlugin(),
         new Notifier({
             name : 'hello everyOne'
         }),
