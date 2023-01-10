@@ -12,6 +12,7 @@ module.exports = {
         path: path.resolve(__dirname, 'build'),
         clean: true,
     },
+    mode :"production",
     module: {
         rules: [
             {
