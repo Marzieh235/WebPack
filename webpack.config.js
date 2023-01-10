@@ -19,7 +19,7 @@ module.exports = {
                 use : ['style-loader' , 'css-loader' , 'sass-loader']
             },
             {
-                test : /\.(png|jpe?g|gif)/,
+                test : /\.(png|jpe?g|gif)$/,
                 use : [
                    {
                        loader : 'file-loader',
@@ -30,6 +30,21 @@ module.exports = {
                        }
                    } 
                 ]
+            },
+
+            {
+              test : /\.(woff|woff2|otf|ttf|eot)$/ ,
+              use : [
+                {
+                    loader : 'file-loader',
+                    options : {
+                        publicPath : 'build/fonts',
+                        outputPath : 'fonts',
+                        name : '[name].[ext]'
+                    }
+                } 
+             ]
+          
             }
         ]
     }

@@ -15,11 +15,21 @@ createImageTag() {
 }
 
 
+
+createTextTag(){
+    const text = document.createElement('h2');
+    text.innerText = 'سلام دوست من !';
+    return text ;
+}
+
 render() {
     const element = document.createElement('div');
     element.classList.add('image-box')
 
-    element.appendChild(this.createImageTag())
+
+
+    element.appendChild(this.createTextTag());
+    element.appendChild(this.createImageTag());
 
     return element;
 }

@@ -1,7 +1,14 @@
+@import './../fonts/font-face.css';
+
+body {
+    font-family: 'Parastoo';
+}
+
 .image-box {
     display: flex;
     justify-content: center;
     align-items: center;
     border: 2px solid rgba(20, 148, 217, 0.5);
     padding: 10px;
+    flex-direction: column;
 }
