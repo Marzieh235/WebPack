@@ -8,7 +8,7 @@ module.exports = {
         bundle: './src/script.js'
     },
     output: {
-        filename: '[name].js',
+        filename: '[name].[contenthash].js',
         path: path.resolve(__dirname, 'build'),
     },
     module: {
@@ -69,7 +69,9 @@ module.exports = {
             template: 'index.html'
         }),
 
-        new MiniCssExtractPlugin(),
+        new MiniCssExtractPlugin({
+            filename: '[name].[contenthash].css'
+        }),
     ],
 
 }
