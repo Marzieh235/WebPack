@@ -13,6 +13,15 @@ const config = {
         path: path.resolve(__dirname, 'build'),
         clean: true,
     },
+
+    optimization: {
+        splitChunks: {
+          // include all types of chunks
+          chunks: 'all',
+        }
+      },
+
+
     module: {
         rules: [
             {
@@ -101,4 +110,7 @@ module.exports = (env, argv) => {
     }
   
     return config;
+
+
+    
   };
