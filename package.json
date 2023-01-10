@@ -28,6 +28,7 @@
   },
   "dependencies": {
     "lodash": "^4.17.21",
+    "node-notifier": "^10.0.1",
     "node-sass": "^8.0.0",
     "ref-loader": "^1.0.3"
   }

@@ -1,7 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('Html-Webpack-Plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-
+const Notifier = require('./webpack-plugins/Notifier')
 
 const config = {
     entry: {
@@ -75,6 +75,9 @@ const config = {
     },
 
     plugins: [
+        new Notifier({
+            name : 'hello everyOne'
+        }),
         new HtmlWebpackPlugin({
             title: 'good morning',
             template: 'index.html',
