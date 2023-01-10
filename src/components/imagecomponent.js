@@ -18,7 +18,7 @@ createImageTag() {
 
 createTextTag(){
     const text = document.createElement('h2');
-    text.innerText = 'سلام دوست من !';
+    text.innerText = 'سلام دوست من ';
     return text ;
 }
 
