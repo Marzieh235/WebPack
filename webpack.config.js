@@ -2,8 +2,8 @@ const path = require('path');
 const HtmlWebpackPlugin = require('Html-Webpack-Plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const Notifier = require('./webpack-plugins/Notifier')
-const webpack = require('webpack');
-
+const Webpack = require('webpack');
+const ESLintPlugin = require('eslint-webpack-plugin');
 const config = {
     entry: {
         bundle: './src/script.js',
@@ -17,14 +17,14 @@ const config = {
 
     optimization: {
         splitChunks: {
-          // include all types of chunks
-          chunks: 'all',
+            // include all types of chunks
+            chunks: 'all',
         }
-      },
+    },
 
-      stats: {
+    stats: {
         all: undefined,
-      },
+    },
 
 
     module: {
@@ -80,9 +80,10 @@ const config = {
     },
 
     plugins: [
-        new webpack.ProgressPlugin(),
+        new ESLintPlugin(options), 
+        new Webpack.ProgressPlugin(),
         new Notifier({
-            name : 'hello everyOne'
+            name: 'hello everyOne'
         }),
         new HtmlWebpackPlugin({
             title: 'good morning',
@@ -107,19 +108,19 @@ const config = {
 
 module.exports = (env, argv) => {
     if (argv.mode === 'development') {
-      config.devtool = 'source-map';
+        config.devtool = 'source-map';
     }
-  
+
     if (argv.mode === 'production') {
         config.plugins.push(
             new MiniCssExtractPlugin({
-            filename: '[name].[contenthash].css'
-        }),
+                filename: '[name].[contenthash].css'
+            }),
         )
     }
-  
+
     return config;
 
 
-    
-  };
+
+};
